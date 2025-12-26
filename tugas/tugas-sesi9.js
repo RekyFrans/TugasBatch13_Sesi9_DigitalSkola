@@ -35,26 +35,22 @@ describe('Google Search Test', function () {
     //Sort Z to A
     it('Sort Z-A', async function () {
         //Sort Z-A
-        let Header1 = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span'))
-        let Header2 = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select')) 
-        let dropdownSortAtoZ = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select/option[2]'))
+        let dropdown1 = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select')) 
+        let dropdownSortZtoA = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select/option[2]'))
             
         //Action Sort
-        await Header1.click()
-        await Header2.click()
-        await dropdownSortAtoZ.click()    
+        await dropdown1.click()
+        await dropdownSortZtoA.click()    
         await delay(1000) // Jeda 1 detik
     })
 
     //Sort A to Z
     it('Sort A-Z', async function () {
-        let Header1 = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span'))
-        let Header2 = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select')) 
+        let dropdown2 = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select')) 
         let dropdownSortAtoZ = await driver.findElement(By.xpath('//*[@id="header_container"]/div[2]/div/span/select/option[1]'))
             
         //Action Sort
-        await Header1.click()
-        await Header2.click()
+        await dropdown2.click()
         await dropdownSortAtoZ.click()    
         await delay(1000) // Jeda 1 detik
         await driver.quit();
